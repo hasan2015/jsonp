@@ -52,7 +52,7 @@ public class Cors {
 	@ResponseBody
 	@RequestMapping(value = "/json", method = RequestMethod.GET)
 	public List<User> json(HttpServletResponse response) {
-		//response.addHeader("Access-Control-Allow-Origin", "*");//调测通过，可以跨域访问了
+		response.addHeader("Access-Control-Allow-Origin", "*");//调测通过，可以跨域访问了
 		 
 		List<User> lUses = new ArrayList<User>();
 		User user = new User();

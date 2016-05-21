@@ -39,12 +39,12 @@ public class AccessKeyInterceptor extends HandlerInterceptorAdapter {
 				log.error("====================================ILLEGAL ACCESS: ACCESS_KEY_MISSING!=======================");
 			}else{
 				log.debug("====================================ACCESS WITH Access KEY:"+accessKey+"====================");
-				IAccess access = accessService.getAccess(UserSessionUtils.getUserSession(request), accessKey);
-				if(access!=null){
-					defaultAccessAllowedFrom=access.getAccessAllowedFrom();
-				}else{
-					log.warn("======================================ACCESS KEY:"+accessKey+" DOES NOT EXIST!=================");	
-				}
+//				IAccess access = accessService.getAccess(UserSessionUtils.getUserSession(request), accessKey);
+//				if(access!=null){
+//					defaultAccessAllowedFrom=access.getAccessAllowedFrom();
+//				}else{
+//					log.warn("======================================ACCESS KEY:"+accessKey+" DOES NOT EXIST!=================");	
+//				}
 			}
 			for(String s : defaultAccessAllowedFrom) {
 				if(host.matches(s)){							
@@ -66,13 +66,13 @@ public class AccessKeyInterceptor extends HandlerInterceptorAdapter {
 			this.defaultAccessAllowedFrom = defaultAccessAllowedFrom;
 		}
 
-		public String getAccessKeyParameterName() {
-			return AccessKeyParameterName;
-		}
-
-		public void setAccessKeyParameterName(String accessKeyParameterName) {
-			this.AccessKeyParameterName = AccessKeyParameterName;
-		}
+//		public String getAccessKeyParameterName() {
+//			return AccessKeyParameterName;
+//		}
+//
+//		public void setAccessKeyParameterName(String accessKeyParameterName) {
+//			this.AccessKeyParameterName = AccessKeyParameterName;
+//		}
 	
 	
 	
